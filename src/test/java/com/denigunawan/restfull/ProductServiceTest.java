@@ -32,7 +32,7 @@ public class ProductServiceTest {
 
     @Before
     public void  setup(){
-        MockitoAnnotations.initMocks(this);
+       MockitoAnnotations.openMocks(this);
         ReflectionTestUtils.setField(productService, "productRepository",
                 productRepository);
     }
@@ -61,7 +61,7 @@ public class ProductServiceTest {
             MatcherAssert.assertThat(actual.getHargaBeli(), Matchers.equalTo(product.getHargaBeli()));
             MatcherAssert.assertThat(actual.getHargaJual(), Matchers.equalTo(product.getHargaJual()));
     }
-//
+
 //    @Test
 //    public void testProductByIdWithNullDataFromDB() throws Exception{
 //        final Long id = new Random().nextLong();
